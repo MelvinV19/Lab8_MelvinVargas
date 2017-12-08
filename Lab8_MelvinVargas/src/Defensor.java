@@ -127,6 +127,7 @@ public class Defensor extends Pieza {
                     System.out.println("Ingrese columna del defensor");
                     columna = sc.nextInt();
                     System.out.println("");
+                    
                     while (fila > tablero.length - 1 || columna > tablero.length - 1) {
                         System.out.println("No puede poner numeros mas grandes que el tablero");
                         System.out.println("Ingrese fila del defensor: ");

@@ -180,11 +180,13 @@ public class Lab8 {
 //        tablero[4][2] = new Defensor(2, 5, "negro");
 //        tablero[5][2] = new Atacante(2, 5, "negro");
 //        tablero[1][3] = new Defensor(2, 5, "negro");
-        tablero[9][6]=new Atacante(9,6,"negro");
-        tablero[9][7]=new Defensor(9,7,"blanco");
-        tablero[9][8]=new Atacante(9,8,"negro");
-        tablero[9][9]=new Defensor(9,9,"blanco");
-        tablero[9][10]=new Atacante(9,10,"negro");
+
+//Por si quieren probar intercalado habiliten esta parte.
+//        tablero[9][6]=new Atacante(9,6,"negro");
+//        tablero[9][7]=new Defensor(9,7,"blanco");
+//        tablero[9][8]=new Atacante(9,8,"negro");
+//        tablero[9][9]=new Defensor(9,9,"blanco");
+//        tablero[9][10]=new Atacante(9,10,"negro");
 
 
         return tablero;
