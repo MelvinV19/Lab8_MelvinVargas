@@ -6,16 +6,16 @@ import java.util.Scanner;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author User
  */
-public class Defensor extends Pieza{
-        String color;
-        Scanner sc=new Scanner(System.in);
+public class Defensor extends Pieza {
 
-    public Defensor( int fila, int columna, String color) {
+    String color;
+    Scanner sc = new Scanner(System.in);
+
+    public Defensor(int fila, int columna, String color) {
         super(fila, columna, color);
         this.color = color;
     }
@@ -31,12 +31,10 @@ public class Defensor extends Pieza{
     public void setColor(String color) {
         this.color = color;
     }
-    
-        
 
     @Override
     public Pieza[][] movimiento(Pieza[][] tablero) {
-        
+
         if (this.getColor().equals("blanco")) {
             boolean mover = false;
             do {
@@ -49,35 +47,31 @@ public class Defensor extends Pieza{
                         if (n_columna > columna) {
                             for (int i = columna + 1; i <= n_columna; i++) {
                                 if (tablero[fila][i] instanceof Pieza) {
-                                    
-                                        System.out.println("Hay algo bloqueando el camino");
-                                        break;
-                                    
-                                    
+                                    System.out.println("Hay algo bloqueando el camino");
+                                    break;
                                 }
                                 if (tablero[fila][i] == null) {
                                     tablero[fila][i] = tablero[fila][columna];
                                     tablero[fila][columna] = null;
-                                    
                                     columna++;
                                     mover = true;
                                 }
 
                             }
+                            
                         }
                         if (n_columna < columna) {
                             for (int i = columna - 1; i >= n_columna; i--) {
                                 if (tablero[fila][i] instanceof Pieza) {
-                                    
-                                        System.out.println("Hay algo bloqueando el camino");
-                                        break;
-                                    
-                                    
+
+                                    System.out.println("Hay algo bloqueando el camino");
+                                    break;
+
                                 }
                                 if (tablero[fila][i] == null) {
                                     tablero[fila][i] = tablero[fila][columna];
                                     tablero[fila][columna] = null;
-                                    
+
                                     columna--;
                                     mover = true;
                                 }
@@ -89,16 +83,15 @@ public class Defensor extends Pieza{
                         if (n_fila > fila) {
                             for (int i = fila + 1; i <= n_fila; i++) {
                                 if (tablero[i][columna] instanceof Pieza) {
-                                    
-                                        System.out.println("Hay algo bloqueando el camino");
-                                        break;
-                                    
-                                    
+
+                                    System.out.println("Hay algo bloqueando el camino");
+                                    break;
+
                                 }
                                 if (tablero[i][columna] == null) {
                                     tablero[i][columna] = tablero[fila][columna];
                                     tablero[fila][columna] = null;
-                                    
+
                                     fila++;
                                     mover = true;
                                 }
@@ -108,16 +101,15 @@ public class Defensor extends Pieza{
                         if (n_fila < fila) {
                             for (int i = fila - 1; i >= n_fila; i--) {
                                 if (tablero[i][columna] instanceof Pieza) {
-                                    
-                                        System.out.println("Hay algo bloqueando el camino");
-                                        break;
-                                    
-                                    
+
+                                    System.out.println("Hay algo bloqueando el camino");
+                                    break;
+
                                 }
                                 if (tablero[i][columna] == null) {
                                     tablero[i][columna] = tablero[fila][columna];
                                     tablero[fila][columna] = null;
-                                    
+
                                     fila--;
                                     mover = true;
                                 }
@@ -151,7 +143,7 @@ public class Defensor extends Pieza{
                         columna = sc.nextInt();
                         System.out.println("");
                     }
-                    
+
                     tablero = tablero[fila][columna].movimiento(tablero);
                     mover = true;
 
@@ -161,12 +153,10 @@ public class Defensor extends Pieza{
         }
         return tablero;
     }
-    
 
     @Override
     public String toString() {
         return "O";
     }
-    
-    
+
 }
